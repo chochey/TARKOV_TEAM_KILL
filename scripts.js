@@ -104,7 +104,7 @@ function displayData(groupedData) {
     const playerSection = document.createElement("div");
     playerSection.classList.add("player-section");
 
-    const playerName = document.createElement("h2");
+    const playerName = document.createElement("h3");
     playerName.innerText = player + "'s" + " Deaths";
     playerSection.appendChild(playerName);
 
