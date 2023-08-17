@@ -151,7 +151,7 @@ h2 {
   padding: 5px 10px 5px 5px; /* Adjusted padding-right */
   display: block;
   margin-right: 10px;
-  border-right: 1px solid #5f6769; /* Added border-right */
+  border-right: 1px solid #5f6769;
 }
 
 #linksContainer a:last-child {
