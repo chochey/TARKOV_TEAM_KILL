@@ -62,7 +62,7 @@ h1 {
   position: fixed; /* Absolute positioning within the viewport */
   top: 10%; /* Adjust this value to move the modal closer or further from the top */
   left: 40%; /* Start from the leftmost point */
-  width: 100%; /* Full viewport width */
+  width: 80%; /* Full viewport width */
   height: auto; /* Let the height adjust to its content */
   display: none; /* Initially hidden */
   align-items: flex-start; /* Align the content to the top */
