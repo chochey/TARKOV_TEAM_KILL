@@ -32,6 +32,7 @@ document
 
       // Fetch and display the updated data
       fetchDataAndDisplay();
+      location.reload();
     } catch (error) {
       console.error("Error:", error);
       document.getElementById("message").innerText = "Successfully.";
