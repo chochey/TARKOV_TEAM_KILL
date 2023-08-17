@@ -63,10 +63,10 @@ h1 {
   top: 10%; /* Adjust this value to move the modal closer or further from the top */
   left: 0; /* Start from the leftmost point */
   width: 100%; /* Full viewport width */
-  height: 100%; /* Full viewport height */
+  height: auto; /* Let the height adjust to its content */
   display: none; /* Initially hidden */
-  align-items: top; /* Center the modal content vertically */
-  justify-content: center; /* Center the modal content horizontally */
+  align-items: flex-start; /* Align the content to the top */
+  justify-content: center; /* Center the content horizontally */
   z-index: 10; /* Place above all other content */
 }
 
@@ -77,7 +77,6 @@ h1 {
   width: 80%; /* This will take 80% of its parent's width */
   margin: 0 auto; /* This will center the modal content horizontally */
 }
-
 .close {
   color: #aaa;
   float: right;
