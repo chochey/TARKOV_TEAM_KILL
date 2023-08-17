@@ -72,10 +72,7 @@ h1 {
   text-align: center;
   color: #dfcdc3;
 }
-h2 {
-  text-align: center;
-  color: #81746d;
-}
+
 #teamKillModal {
   background-color: black;
   position: fixed;
@@ -119,6 +116,11 @@ h2 {
   position: relative;
   margin-bottom: 20px;
   margin-top: 20px;
+}
+
+.player-section h1 {
+  color: #000000; /* Dark color for the name, adjust as needed */
+  text-align: center; /* Center the name horizontally */
 }
 
 #linksContainer {
