@@ -102,7 +102,7 @@ h1 {
 }
 
 .player-section {
-  width: 250px; /* Or any other desired width */
+  width: 20%; /* Or any other desired width */
   height: 250px; /* Or any other desired height */
   border: 1px solid #ccc;
   padding: 1rem;
