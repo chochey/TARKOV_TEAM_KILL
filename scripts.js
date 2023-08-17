@@ -28,6 +28,10 @@ document
     } catch (error) {
       console.error("Error:", error);
       document.getElementById("message").innerText = "Submitted";
+
+      setTimeout(() => {
+        document.getElementById("message").innerText = "";
+      }, 2500);
     } finally {
       // Re-enable the button either after the request has been processed or after a certain duration
       setTimeout(() => {

@@ -29,6 +29,7 @@ button {
 
 #message {
   margin-top: 20px;
+  text-align: right;
 }
 
 #submitButton {
