@@ -61,7 +61,7 @@ h1 {
 #teamKillModal.modal {
   position: fixed; /* Absolute positioning within the viewport */
   top: 10%; /* Adjust this value to move the modal closer or further from the top */
-  left: 30%; /* Start from the leftmost point */
+  left: 35%; /* Start from the leftmost point */
   width: 80%; /* Full viewport width */
   height: auto; /* Let the height adjust to its content */
   display: none; /* Initially hidden */
