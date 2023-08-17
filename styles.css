@@ -96,7 +96,7 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   height: 100vh; /* Making sure the container takes the full height of the viewport */
   gap: 1rem; /* Space between each player box */
 }
