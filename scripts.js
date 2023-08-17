@@ -94,6 +94,7 @@ function displayData(groupedData) {
 
   // Clear out old data
   container.innerHTML = "";
+  let entryNumber = 1;
 
   for (const player in groupedData) {
     const playerSection = document.createElement("div");
@@ -107,6 +108,7 @@ function displayData(groupedData) {
       const detailElement = document.createElement("p");
       detailElement.innerText = `Killed by ${detail.killedBy} in ${detail.map} to the ${detail.location} by ${detail.cause} on ${detail.date}}`;
       playerSection.appendChild(detailElement);
+      entryNumber++;
     });
 
     container.appendChild(playerSection);
