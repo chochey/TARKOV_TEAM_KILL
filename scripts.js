@@ -118,4 +118,12 @@ function displayData(groupedData) {
   }
 }
 // Call the function to fetch and display data on page load
-document.addEventListener("DOMContentLoaded", fetchDataAndDisplay);
+
+document.addEventListener("DOMContentLoaded", function () {
+  fetchDataAndDisplay();
+
+  // Replace "Cause of Death" input with the ammo dropdown
+  const causeInput = document.getElementById("cause");
+  const ammoDropdown = createAmmoDropdown();
+  causeInput.replaceWith(ammoDropdown);
+});
