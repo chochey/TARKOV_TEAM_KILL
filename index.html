@@ -6,29 +6,61 @@
     <title>Tarkov Team Kills</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-
   <body>
     <button id="openModalBtn">Report Team Kill</button>
-
     <div id="teamKillModal" class="modal">
       <div class="modal-content">
         <span id="closeModalBtn" class="close">&times;</span>
         <h1>You NOOB!!!</h1>
         <form id="teamKillForm">
           <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required />
+          <select id="name" name="name" required>
+            <!-- Replace with the desired names -->
+            <option value="Player1">Nick</option>
+            <option value="Player2">Kyle</option>
+            <option value="Player2">Dan</option>
+            <option value="Player2">Greg</option>
+            <!-- ... add more options as required ... -->
+          </select>
 
           <label for="killer">Killed By:</label>
-          <input type="text" id="killer" name="killer" required />
+          <select id="killer" name="killer" required>
+            <!-- Replace with the desired killers -->
+            <option value="Player1">Nick</option>
+            <option value="Player2">Kyle</option>
+            <option value="Player2">Dan</option>
+            <option value="Player2">Greg</option>
+            <!-- ... add more options as required ... -->
+          </select>
 
           <label for="cause">Cause of Death:</label>
           <input type="text" id="cause" name="cause_of_death" required />
 
           <label for="map">Map:</label>
-          <input type="text" id="map" name="map_name" required />
+          <select id="map" name="map_name" required>
+            <!-- Replace with the desired maps -->
+            <option value="Map1">Customs</option>
+            <option value="Map2">Reserve</option>
+            <option value="Map2">Interchange</option>
+            <option value="Map2">Factory</option>
+            <option value="Map2">Lighthouse</option>
+            <option value="Map2">Woods</option>
+            <option value="Map2">Streets of Tarkov</option>
+            <option value="Map2">Labs</option>
+            <!-- ... add more options as required ... -->
+          </select>
 
           <label for="location">Location of Death:</label>
-          <input type="text" id="location" name="death_location" required />
+          <select id="location" name="death_location" required>
+            <!-- Replace with the desired locations -->
+            <option value="Location1">Head</option>
+            <option value="Location2">Thorax</option>
+            <option value="Location2">Arm</option>
+            <option value="Location2">Leg</option>
+            <option value="Location2">Stomach</option>
+
+            <!-- ... add more options as required ... -->
+          </select>
 
           <button id="submitButton" type="submit">Submit</button>
         </form>
