@@ -28,7 +28,7 @@ document
       e.target.reset();
 
       // Close the form modal
-      document.getElementById("teamKillModal").style.display = "none";
+      document.getElementById("modal-content").style.display = "none";
 
       // Fetch and display the updated data
       fetchDataAndDisplay();
@@ -44,6 +44,8 @@ document
       }, 3000);
     }
   });
+
+// ----------------------------------------------------------------------------------------------------------------
 
 document.getElementById("openModalBtn").addEventListener("click", function () {
   document.getElementById("teamKillModal").style.display = "block";
