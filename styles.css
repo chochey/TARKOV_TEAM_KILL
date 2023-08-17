@@ -98,15 +98,15 @@ h1 {
   justify-content: center;
   align-items: center;
   height: 100vh; /* Making sure the container takes the full height of the viewport */
-  gap: 2rem; /* Space between each player box */
+  gap: 1rem; /* Space between each player box */
 }
 
 .player-section {
-  width: 20%; /* Or any other desired width */
+  width: 22%; /* Or any other desired width */
   height: 250px; /* Or any other desired height */
   border: 1px solid #ccc;
   padding: 1rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(136, 134, 134, 0.1);
   display: flex;
   flex-direction: column;
   align-items: center;
