@@ -166,7 +166,7 @@ h2 {
 .close {
   transition: all 0.3s ease; /* Smooth transition for all changes */
   padding: 5px; /* Initial padding */
-  display: inline-block; /* To ensure padding and other block properties apply */
+  display: inline-block;
 }
 
 .close:hover {
