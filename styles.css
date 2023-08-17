@@ -111,7 +111,7 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: left;
-  justify-content: start; /* Align the content at the top of the box */
+  justify-content: flex-start; /* Align the content at the top of the box */
   border-radius: 4px;
   overflow: auto; /* This will add scrollbars if the content overflows the maximum height */
   position: relative;
