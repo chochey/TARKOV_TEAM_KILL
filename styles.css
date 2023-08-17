@@ -6,7 +6,7 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #3c4245;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkAgMAAAANjH3HAAAADFBMVEUtLS8uLjAvLzEsKy2xgXVgAAAASElEQVR4Ae3QoQ3AAAwDQa9Qmu1DX5kk6lAdoEbBJk8tn4qHdtHyMi7qpspFM+y6iKJxEcvgctm5/IlBDGIQgxjEIAYxiME/H1nLq0bNJikRAAAAAElFTkSuQmCC);
   color: #dfcdc3;
   padding: 10px;
 }
@@ -71,8 +71,15 @@ button {
 h1 {
   text-align: center;
   color: #dfcdc3;
+  text-shadow: 2px 2px 4px #000000;
+  text-transform: uppercase;
+  /* font-family: "Notable", sans-serif; */
 }
-
+h2 {
+  text-align: center;
+  color: #dfcdc3;
+  text-transform: uppercase;
+}
 #teamKillModal {
   background-color: black;
   position: fixed;
@@ -87,7 +94,7 @@ h1 {
 }
 
 #teamKillModal .modal-content {
-  background-color: #353434;
+  background-color: #423f3f;
   padding: 25px;
 }
 
