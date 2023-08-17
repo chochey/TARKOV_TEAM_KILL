@@ -26,6 +26,12 @@ document
       console.log(result.message);
       document.getElementById("message").innerText = "Data added successfully!";
       e.target.reset();
+
+      // Close the form modal
+      document.getElementById("teamKillModal").style.display = "none";
+
+      // Fetch and display the updated data
+      fetchDataAndDisplay();
     } catch (error) {
       console.error("Error:", error);
       document.getElementById("message").innerText = "Successfully.";
