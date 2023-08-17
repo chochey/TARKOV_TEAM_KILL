@@ -7,7 +7,7 @@
 body {
   font-family: Arial, sans-serif;
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkAgMAAAANjH3HAAAADFBMVEUtLS8uLjAvLzEsKy2xgXVgAAAASElEQVR4Ae3QoQ3AAAwDQa9Qmu1DX5kk6lAdoEbBJk8tn4qHdtHyMi7qpspFM+y6iKJxEcvgctm5/IlBDGIQgxjEIAYxiME/H1nLq0bNJikRAAAAAElFTkSuQmCC);
-  color: #dfcdc3;
+  color: #d4c2b9;
   padding: 10px;
 }
 
@@ -148,17 +148,21 @@ h2 {
   text-decoration: none;
   color: #dfcdc3;
   transition: color 0.3s ease;
-  padding: 5px;
+  padding: 5px 10px 5px 5px; /* Adjusted padding-right */
   display: block;
-  border-radius: 4px;
-  background-color: #719192;
   margin-right: 10px;
+  border-right: 1px solid #dfcdc3; /* Added border-right */
+}
+
+#linksContainera: (last-child) {
+  border-right: none;
 }
 
 #linksContainer a:hover {
   color: #dfcdc3;
   background-color: #5f6769;
 }
+
 .close {
   transition: all 0.3s ease; /* Smooth transition for all changes */
   padding: 5px; /* Initial padding */
