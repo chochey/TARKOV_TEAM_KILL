@@ -39,3 +39,14 @@ button {
 #message {
   margin-top: 20px;
 }
+
+#submitButton {
+  transition: transform 0.1s, background-color 0.1s; /* Smooth transition for transform and background-color properties */
+}
+
+#submitButton:active {
+  transform: scale(
+    0.95
+  ); /* Reduce the size of the button to 95% of its original size when pressed */
+  background-color: #ddd; /* Change the background color to a slightly darker shade when pressed */
+}

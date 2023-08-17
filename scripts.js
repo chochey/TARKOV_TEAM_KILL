@@ -33,6 +33,6 @@ document
       // Re-enable the button either after the request has been processed or after a certain duration
       setTimeout(() => {
         submitButton.disabled = false;
-      }, 5000); // Re-enable after 5 seconds
+      }, 3000); // Re-enable after 3 seconds
     }
   });
