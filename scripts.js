@@ -85,6 +85,7 @@ function groupByPlayer(data) {
       acc[name] = [];
     }
     acc[name].push({ killedBy, cause, map, location, date });
+    acc[name].sort((a, b) => new Date(b.date) - new Date(a.date));
     return acc;
   }, {});
 }
@@ -108,7 +109,7 @@ function displayData(groupedData) {
 
     groupedData[player].forEach((detail) => {
       const detailElement = document.createElement("p");
-      detailElement.innerText = `${entryNumber}: Killed by ${detail.killedBy} in ${detail.map} to the ${detail.location} by ${detail.cause} on ${detail.date}}`;
+      detailElement.innerText = `${entryNumber}: Killed by ${detail.killedBy} in ${detail.map} to the ${detail.location} by ${detail.cause} on ${detail.date}`;
       playerSection.appendChild(detailElement);
       entryNumber++;
     });
