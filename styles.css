@@ -6,15 +6,15 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #181a1b !important;
-  color: #e0e0e0; /* Adjust the default text color for dark mode */
+  background-color: #3c4245;
+  color: #dfcdc3;
   padding: 10px;
 }
 
 label {
   display: block;
   margin-bottom: 5px;
-  color: #c0c0c0; /* A lighter gray for label text */
+  color: #5f6769;
 }
 
 input,
@@ -22,26 +22,18 @@ select {
   width: 95%;
   padding: 10px;
   margin-bottom: 20px;
-  border: 1px solid #555;
-  background-color: #333;
-  color: #e0e0e0; /* Text color for input fields */
+  border: 1px solid #5f6769;
+  background-color: #3c4245;
+  color: #dfcdc3;
   border-radius: 5px;
-}
-
-#openModalBtn {
-  margin-top: 20px;
-  width: 45%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 button {
   display: block;
   width: 95%;
   padding: 10px;
-  background-color: #444;
-  color: #fff;
+  background-color: #719192;
+  color: #dfcdc3;
   border: none;
   border-radius: 5px;
 }
@@ -49,7 +41,7 @@ button {
 #message {
   margin-top: 20px;
   text-align: center;
-  color: greenyellow; /* Lighter gray for the message text */
+  color: #dfcdc3;
 }
 
 #submitButton {
@@ -58,78 +50,60 @@ button {
 
 #submitButton:active {
   transform: scale(0.95);
-  background-color: #333; /* Slightly darker button color when pressed */
+  background-color: #5f6769;
 }
 
 h1 {
   text-align: center;
-  color: #fff; /* White text for the header */
-}
-
-#teamKillModal.modal {
-  position: fixed; /* Absolute positioning within the viewport */
-  top: 10%; /* Adjust this value to move the modal closer or further from the top */
-  left: 33%; /* Start from the leftmost point */
-  width: 80%; /* Full viewport width */
-  height: auto; /* Let the height adjust to its content */
-  display: none; /* Initially hidden */
-  align-items: flex-start; /* Align the content to the top */
-  justify-content: center; /* Center the content horizontally */
-  z-index: 10; /* Place above all other content */
-}
-
-#teamKillModal .modal-content {
-  background-color: #2c2c2c; /* Darker modal background */
-  padding: 20px;
-  border: 1px solid #444;
-  width: 80%; /* This will take 80% of its parent's width */
-  margin: 0 auto; /* This will center the modal content horizontally if flexbox were not in use */
-}
-
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  cursor: pointer;
+  color: #dfcdc3;
 }
 
 #teamKillModal {
-  width: 80%;
-  height: 80%;
-  max-width: 600px;
-  max-height: 800px;
-  position: relative;
-  margin: auto;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  background-color: black;
+  position: fixed;
+  top: 50%; /* center vertically */
+  left: 50%; /* center horizontally */
+  transform: translate(-50%, -50%); /* adjust for exact centering */
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  width: 40%;
 }
 
-/* styles.css */
+#teamKillModal .modal-content {
+  background-color: #353434;
+  padding: 25px;
+}
 
 #dataContainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
-  height: 100vh; /* Making sure the container takes the full height of the viewport */
-  gap: 1rem; /* Space between each player box */
+  height: 100vh;
+  gap: 1rem;
 }
 
 .player-section {
   width: 400px;
-  min-height: 250px; /* This ensures the box always maintains this minimum height */
-  max-height: 1000px; /* Optional: After this height, the content will scroll */
-  border: 1px solid #ccc;
+  min-height: 250px;
+  max-height: 1000px;
+  border: 1px solid #5f6769;
   padding: 1rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   align-items: left;
-  justify-content: flex-start; /* Align the content at the top of the box */
+  justify-content: flex-start;
   border-radius: 4px;
-  overflow: auto; /* This will add scrollbars if the content overflows the maximum height */
+  overflow: auto;
   position: relative;
   margin-bottom: 20px;
   margin-top: 20px;
+}
+
+#openModalBtn {
+  margin-top: 20px;
+  background-color: #719192;
 }
