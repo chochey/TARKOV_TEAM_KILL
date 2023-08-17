@@ -61,11 +61,12 @@ h1 {
 #teamKillModal.modal {
   position: fixed; /* Absolute positioning within the viewport */
   top: 10%; /* Adjust this value to move the modal closer or further from the top */
-  width: 82%; /* Full viewport width */
-  height: 100px; /* Full viewport height */
+  left: 0; /* Start from the leftmost point */
+  width: 100%; /* Full viewport width */
+  height: 100%; /* Full viewport height */
   display: none; /* Initially hidden */
-  align-items: flex-start; /* This will position the modal content towards the top */
-  justify-content: center; /* This will center the modal content horizontally */
+  align-items: center; /* Center the modal content vertically */
+  justify-content: center; /* Center the modal content horizontally */
   z-index: 10; /* Place above all other content */
 }
 
@@ -73,11 +74,8 @@ h1 {
   background-color: #2c2c2c; /* Darker modal background */
   padding: 20px;
   border: 1px solid #444;
-  width: 80%;
-  background-color: #2c2c2c;
+  width: 80%; /* This will take 80% of its parent's width */
   margin: 0 auto; /* This will center the modal content horizontally */
-  align-items: center;
-  justify-content: flex-start;
 }
 
 .close {
