@@ -7,7 +7,7 @@ body {
 .container {
   max-width: 600px;
   margin: 0 auto;
-  background-color: #fff;
+  background-color: #e2e1e1;
   padding: 30px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -48,5 +48,9 @@ button {
   transform: scale(
     0.95
   ); /* Reduce the size of the button to 95% of its original size when pressed */
-  background-color: #ddd; /* Change the background color to a slightly darker shade when pressed */
+  background-color: #272727; /* Change the background color to a slightly darker shade when pressed */
+}
+
+h1 {
+  text-align: center;
 }
