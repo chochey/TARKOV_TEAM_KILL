@@ -8,29 +8,33 @@
   </head>
 
   <body>
-    <div class="submit-container">
-      <h1>You NOOB!!!</h1>
-      <form id="teamKillForm">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required />
+    <button id="openModalBtn">Report Team Kill</button>
 
-        <label for="killer">Killed By:</label>
-        <input type="text" id="killer" name="killer" required />
+    <div id="teamKillModal" class="modal">
+      <div class="modal-content">
+        <span id="closeModalBtn" class="close">&times;</span>
+        <h1>You NOOB!!!</h1>
+        <form id="teamKillForm">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
 
-        <label for="cause">Cause of Death:</label>
-        <input type="text" id="cause" name="cause_of_death" required />
+          <label for="killer">Killed By:</label>
+          <input type="text" id="killer" name="killer" required />
 
-        <label for="map">Map:</label>
-        <input type="text" id="map" name="map_name" required />
+          <label for="cause">Cause of Death:</label>
+          <input type="text" id="cause" name="cause_of_death" required />
 
-        <label for="location">Location of Death:</label>
-        <input type="text" id="location" name="death_location" required />
+          <label for="map">Map:</label>
+          <input type="text" id="map" name="map_name" required />
 
-        <button id="submitButton" type="submit">Submit</button>
-      </form>
-      <div id="message"></div>
+          <label for="location">Location of Death:</label>
+          <input type="text" id="location" name="death_location" required />
+
+          <button id="submitButton" type="submit">Submit</button>
+        </form>
+        <div id="message"></div>
+      </div>
     </div>
-
     <script src="scripts.js"></script>
   </body>
 </html>

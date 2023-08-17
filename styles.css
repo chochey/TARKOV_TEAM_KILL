@@ -4,22 +4,13 @@ body {
   padding: 50px;
 }
 
-.container {
-  max-width: 600px;
-  margin: 0 auto;
-  background-color: #e2e1e1;
-  padding: 30px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
 label {
   display: block;
   margin-bottom: 5px;
 }
 
 input {
-  width: 100%;
+  width: 95%;
   padding: 10px;
   margin-bottom: 20px;
   border: 1px solid #ddd;
@@ -48,9 +39,42 @@ button {
   transform: scale(
     0.95
   ); /* Reduce the size of the button to 95% of its original size when pressed */
-  background-color: #272727; /* Change the background color to a slightly darker shade when pressed */
+  background-color: #4d4c4c; /* Change the background color to a slightly darker shade when pressed */
 }
 
 h1 {
   text-align: center;
+}
+
+.modal {
+  display: none;
+  /* ... other styles ... */
+}
+
+#teamKillModal .modal-content {
+  background-color: #fefefe;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* You can adjust this if you want a different width */
+  margin: auto; /* This will center the content */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+#teamKillModal {
+  width: 80%; /* Adjust as per your requirement */
+  height: 80%; /* Adjust as per your requirement */
+  max-width: 600px; /* Adjust as per your requirement */
+  max-height: 800px; /* Adjust as per your requirement */
+  position: relative;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

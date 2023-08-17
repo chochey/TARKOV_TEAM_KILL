@@ -35,3 +35,16 @@ document
       }, 3000); // Re-enable after 3 seconds
     }
   });
+document.getElementById("openModalBtn").addEventListener("click", function () {
+  console.log("Button clicked!");
+  document.getElementById("teamKillModal").style.display = "block";
+});
+
+document.getElementById("closeModalBtn").addEventListener("click", function () {
+  console.log("Close button clicked!");
+  document.getElementById("teamKillModal").style.display = "none";
+});
+
+document.getElementById("openModalBtn").addEventListener("click", function () {
+  document.getElementById("teamKillModal").style.display = "block";
+});
