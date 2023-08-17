@@ -35,12 +35,12 @@ select {
   color: #000000;
   border: none;
   border-radius: 5px;
-  margin-left: auto; /* This will push the button to the far right */
+  margin-left: auto;
 }
 
 #openModalBtn:hover {
-  color: #dfcdc3; /* Changes the button text color when hovered */
-  background-color: #5f6769; /* Background color for button hover effect */
+  color: #dfcdc3;
+  background-color: #5f6769;
 }
 
 button {
@@ -76,9 +76,9 @@ h1 {
 #teamKillModal {
   background-color: black;
   position: fixed;
-  top: 50%; /* center vertically */
-  left: 50%; /* center horizontally */
-  transform: translate(-50%, -50%); /* adjust for exact centering */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: none;
   align-items: center;
   justify-content: center;
@@ -125,27 +125,27 @@ h1 {
   border: 2px solid #719192;
   padding: 10px 20px;
   margin-bottom: 20px;
-  width: 60%;
+  width: 85%;
   margin-left: auto;
   margin-right: auto;
-  border-radius: 4px; /* Rounded corners for each link */
+  border-radius: 4px;
 }
+
 #linksContainer a {
-  text-decoration: none; /* Removes the underline from the links */
-  color: #dfcdc3; /* Sets the link color */
-  transition: color 0.3s ease; /* Smooth color transition for hover effect */
-  padding: 5px; /* Space around each link */
-  display: block; /* Makes the entire area of the link clickable */
-  border-radius: 4px; /* Rounded corners for each link */
+  text-decoration: none;
+  color: #dfcdc3;
+  transition: color 0.3s ease;
+  padding: 5px;
+  display: block;
+  border-radius: 4px;
   background-color: #719192;
   margin-right: 10px;
 }
 
 #linksContainer a:hover {
-  color: #dfcdc3; /* Changes the link color when hovered */
-  background-color: #5f6769; /* Background color for link hover effect */
+  color: #dfcdc3;
+  background-color: #5f6769;
 }
-
 .close {
   transition: all 0.3s ease; /* Smooth transition for all changes */
   padding: 5px; /* Initial padding */
