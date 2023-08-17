@@ -102,9 +102,9 @@ h1 {
 }
 
 .player-section {
-  width: 250px;
+  width: 400px;
   min-height: 250px; /* This ensures the box always maintains this minimum height */
-  max-height: 500px; /* Optional: After this height, the content will scroll */
+  max-height: 1000px; /* Optional: After this height, the content will scroll */
   border: 1px solid #ccc;
   padding: 1rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
