@@ -27,8 +27,7 @@ document
       document.getElementById("message").innerText = "Data added successfully!";
     } catch (error) {
       console.error("Error:", error);
-      document.getElementById("message").innerText =
-        "Failed to add data. Please try again.";
+      document.getElementById("message").innerText = "Submitted";
     } finally {
       // Re-enable the button either after the request has been processed or after a certain duration
       setTimeout(() => {
