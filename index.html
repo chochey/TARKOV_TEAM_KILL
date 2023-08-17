@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tarkov Team Kills</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Tarkov Team Kills</h1>
+      <form id="teamKillForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="killer">Killed By:</label>
+        <input type="text" id="killer" name="killer" required />
+
+        <label for="cause">Cause of Death:</label>
+        <input type="text" id="cause" name="cause_of_death" required />
+
+        <label for="map">Map:</label>
+        <input type="text" id="map" name="map_name" required />
+
+        <label for="location">Location of Death:</label>
+        <input type="text" id="location" name="death_location" required />
+
+        <button type="submit">Submit</button>
+      </form>
+      <div id="message"></div>
+    </div>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
