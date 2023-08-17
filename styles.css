@@ -65,7 +65,7 @@ h1 {
   width: 100%; /* Full viewport width */
   height: 100%; /* Full viewport height */
   display: none; /* Initially hidden */
-  align-items: center; /* Center the modal content vertically */
+  align-items: top; /* Center the modal content vertically */
   justify-content: center; /* Center the modal content horizontally */
   z-index: 10; /* Place above all other content */
 }
