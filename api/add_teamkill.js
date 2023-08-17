@@ -27,9 +27,9 @@ module.exports = async (req, res) => {
       },
     });
 
-    res.status(200).send("Data added successfully");
+    res.status(200).json({ message: "Data added successfully!" });
   } catch (error) {
-    console.error("Error writing to Google Sheets:", error);
-    res.status(500).send("Internal Server Error");
+    console.error("Error adding data:", error);
+    res.status(500).json({ message: "Failed to add data." });
   }
 };

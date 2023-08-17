@@ -5,7 +5,6 @@ document
 
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData.entries());
-
     const submitButton = document.getElementById("submitButton");
     submitButton.disabled = true;
 
@@ -18,34 +17,26 @@ document
         body: JSON.stringify(data),
       });
 
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-
       const result = await response.json();
-      console.log(result.message);
-      document.getElementById("message").innerText = "Data added successfully!";
-      e.target.reset();
 
-      // Close the form modal
-      document.getElementById("teamKillModal").style.display = "none";
-
-      // Fetch and display the updated data
-      fetchDataAndDisplay();
-      location.reload();
+      if (response.ok) {
+        document.getElementById("message").innerText = result.message;
+        e.target.reset();
+        document.getElementById("teamKillModal").style.display = "none"; // Close the modal
+        await fetchDataAndDisplay(); // Refresh displayed data
+      } else {
+        throw new Error(result.message);
+      }
     } catch (error) {
       console.error("Error:", error);
-      document.getElementById("message").innerText = "Successfully.";
-      setTimeout(() => {
-        document.getElementById("message").innerText = "";
-      }, 2500);
+      document.getElementById("message").innerText = "Error adding data.";
     } finally {
       setTimeout(() => {
         submitButton.disabled = false;
+        document.getElementById("message").innerText = "";
       }, 3000);
     }
   });
-
 // ----------------------------------------------------------------------------------------------------------------
 
 document.getElementById("openModalBtn").addEventListener("click", function () {
@@ -101,6 +92,9 @@ function groupByPlayer(data) {
 function displayData(groupedData) {
   const container = document.getElementById("dataContainer");
 
+  // Clear out old data
+  container.innerHTML = "";
+
   for (const player in groupedData) {
     const playerSection = document.createElement("div");
     playerSection.classList.add("player-section");
@@ -118,6 +112,5 @@ function displayData(groupedData) {
     container.appendChild(playerSection);
   }
 }
-
 // Call the function to fetch and display data on page load
 document.addEventListener("DOMContentLoaded", fetchDataAndDisplay);
