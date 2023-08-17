@@ -79,11 +79,11 @@ async function fetchDataAndDisplay() {
 // Function to group data by player names
 function groupByPlayer(data) {
   return data.reduce((acc, curr) => {
-    const [name, killedBy, cause, map, location] = curr;
+    const [name, killedBy, cause, map, location, date] = curr;
     if (!acc[name]) {
       acc[name] = [];
     }
-    acc[name].push({ killedBy, cause, map, location, currentDate });
+    acc[name].push({ killedBy, cause, map, location, date });
     return acc;
   }, {});
 }
@@ -105,7 +105,7 @@ function displayData(groupedData) {
 
     groupedData[player].forEach((detail) => {
       const detailElement = document.createElement("p");
-      detailElement.innerText = `Killed by ${detail.killedBy} in ${detail.map} to the ${detail.location} by ${detail.cause} on ${detail.currentDate}}`;
+      detailElement.innerText = `Killed by ${detail.killedBy} in ${detail.map} to the ${detail.location} by ${detail.cause} on ${detail.date}}`;
       playerSection.appendChild(detailElement);
     });
 
