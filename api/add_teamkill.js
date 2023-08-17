@@ -47,5 +47,6 @@ module.exports = async (req, res) => {
   } catch (error) {
     console.error("Error writing to Google Sheets:", error);
     res.status(500).send("Internal Server Error");
+    res.json({ message: "Data added" });
   }
 };

@@ -6,6 +6,9 @@ document
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData.entries());
 
+    const submitButton = document.getElementById("submitButton");
+    submitButton.disabled = true; // Disable the button immediately
+
     try {
       const response = await fetch("/api/add_teamkill", {
         method: "POST",
@@ -15,11 +18,21 @@ document
         body: JSON.stringify(data),
       });
 
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
       const result = await response.json();
+      console.log(result.message);
       document.getElementById("message").innerText = "Data added successfully!";
     } catch (error) {
       console.error("Error:", error);
       document.getElementById("message").innerText =
         "Failed to add data. Please try again.";
+    } finally {
+      // Re-enable the button either after the request has been processed or after a certain duration
+      setTimeout(() => {
+        submitButton.disabled = false;
+      }, 5000); // Re-enable after 5 seconds
     }
   });
