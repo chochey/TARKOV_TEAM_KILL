@@ -17,7 +17,8 @@ const credentials = {
   client_x509_cert_url: process.env.GS_CLIENT_X509_CERT_URL,
 };
 
-const spreadsheetId = "YOUR_SPREADSHEET_ID"; // Replace with your Google Sheet's ID
+const spreadsheetId =
+  "https://docs.google.com/spreadsheets/d/1sopwJ3wOKFPJfHBh3L0jTYRrhkE4V6nrWvEIdB2Dma4/edit#gid=0"; // Replace with your Google Sheet's ID
 const range = "Sheet1"; // Adjust if you're using a different sheet name
 
 module.exports = async (req, res) => {
