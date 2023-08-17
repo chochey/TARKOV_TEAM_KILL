@@ -102,7 +102,7 @@ function displayData(groupedData) {
 
     groupedData[player].forEach((detail) => {
       const detailElement = document.createElement("p");
-      detailElement.innerText = `${detail.killedBy} killed me in ${detail.map} to the ${detail.location} by ${detail.cause}`;
+      detailElement.innerText = `Killed by ${detail.killedBy} in ${detail.map} to the ${detail.location} by ${detail.cause}`;
       playerSection.appendChild(detailElement);
     });
 
