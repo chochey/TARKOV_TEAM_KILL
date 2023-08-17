@@ -72,7 +72,10 @@ h1 {
   text-align: center;
   color: #dfcdc3;
 }
-
+h2 {
+  text-align: center;
+  color: #81746d;
+}
 #teamKillModal {
   background-color: black;
   position: fixed;
@@ -125,7 +128,7 @@ h1 {
   border: 2px solid #719192;
   padding: 10px 20px;
   margin-bottom: 20px;
-  width: 85%;
+  width: 60%;
   margin-left: auto;
   margin-right: auto;
   border-radius: 4px;
@@ -153,8 +156,8 @@ h1 {
 }
 
 .close:hover {
-  color: #dfcdc3; /* You can choose a color that fits your design */
-  background-color: #5f6769; /* Background color for hover effect */
-  padding: 5px; /* Increased padding to make it look more like a button */
-  border-radius: 4px; /* Slightly rounded corners */
+  color: #dfcdc3;
+  background-color: #5f6769;
+  padding: 5px;
+  border-radius: 4px;
 }
