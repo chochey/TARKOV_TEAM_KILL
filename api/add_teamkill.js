@@ -16,6 +16,7 @@ const sheets = google.sheets({ version: "v4", auth });
 module.exports = async (req, res) => {
   try {
     await auth.authorize();
+    const currentDate = new Date().toISOString().split("T")[0]; // This will format the date as "YYYY-MM-DD"
     const { name, killer, cause_of_death, map_name, death_location } = req.body;
 
     await sheets.spreadsheets.values.append({
@@ -23,7 +24,9 @@ module.exports = async (req, res) => {
       range,
       valueInputOption: "RAW",
       resource: {
-        values: [[name, killer, cause_of_death, map_name, death_location]],
+        values: [
+          [name, killer, cause_of_death, map_name, death_location, currentDate],
+        ],
       },
     });
 
