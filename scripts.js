@@ -80,7 +80,7 @@ document
 
 async function fetchDataAndDisplay() {
   try {
-    const response = await fetch("/api/get_teamkills");
+    const response = await fetch("/api/add_teamkill");
     const data = await response.json();
 
     const groupedByPlayer = groupByPlayer(data);
@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", fetchDataAndDisplay);
 
 async function fetchDataAndDisplay() {
   try {
-    const response = await fetch("/api/get_teamkills"); // Adjust the endpoint if you set a different one
+    const response = await fetch("/api/add_teamkill"); // Adjust the endpoint if you set a different one
     const data = await response.json();
 
     const groupedByPlayer = groupByPlayer(data);
@@ -174,7 +174,7 @@ fetchDataAndDisplay();
 
 async function fetchDataFromBackend() {
   try {
-    const response = await fetch("/api/get_teamkills");
+    const response = await fetch("/api/add_teamkill");
     return await response.json();
   } catch (error) {
     console.error("Failed to fetch data from backend:", error);
@@ -198,7 +198,7 @@ async function fetchDataAndDisplay() {
 // Fetch and display data
 async function displaySheetData() {
   try {
-    const response = await fetch("/api/get_teamkills"); // Replace with your backend endpoint
+    const response = await fetch("/api/add_teamkill"); // Replace with your backend endpoint
     const data = await response.json();
 
     // Group data by player names
