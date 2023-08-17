@@ -28,6 +28,21 @@ select {
   border-radius: 5px;
 }
 
+#openModalBtn {
+  display: block;
+  width: 30%;
+  background-color: #a5968d;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  margin-left: auto; /* This will push the button to the far right */
+}
+
+#openModalBtn:hover {
+  color: #dfcdc3; /* Changes the button text color when hovered */
+  background-color: #5f6769; /* Background color for button hover effect */
+}
+
 button {
   display: block;
   width: 95%;
@@ -131,17 +146,15 @@ h1 {
   background-color: #5f6769; /* Background color for link hover effect */
 }
 
-#openModalBtn {
-  display: block;
-  width: 30%;
-  background-color: #719192;
-  color: #dfcdc3;
-  border: none;
-  border-radius: 5px;
-  margin-left: auto; /* This will push the button to the far right */
+.close {
+  transition: all 0.3s ease; /* Smooth transition for all changes */
+  padding: 5px; /* Initial padding */
+  display: inline-block; /* To ensure padding and other block properties apply */
 }
 
-#openModalBtn:hover {
-  color: #dfcdc3; /* Changes the button text color when hovered */
-  background-color: #5f6769; /* Background color for button hover effect */
+.close:hover {
+  color: #dfcdc3; /* You can choose a color that fits your design */
+  background-color: #5f6769; /* Background color for hover effect */
+  padding: 5px; /* Increased padding to make it look more like a button */
+  border-radius: 4px; /* Slightly rounded corners */
 }
