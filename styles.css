@@ -119,3 +119,26 @@ h1 {
   margin-top: 20px;
   background-color: #719192;
 }
+
+#linksContainer {
+  margin-top: 20px; /* Space between the button and the links area */
+}
+
+#linksContainer ul {
+  list-style-type: none; /* Removes the bullet points */
+  padding: 0;
+}
+
+#linksContainer li {
+  margin-bottom: 10px; /* Space between each link */
+}
+
+#linksContainer a {
+  text-decoration: none; /* Removes the underline from the links */
+  color: #719192; /* Sets the link color */
+  transition: color 0.3s ease; /* Smooth color transition for hover effect */
+}
+
+#linksContainer a:hover {
+  color: #dfcdc3; /* Changes the link color when hovered */
+}
