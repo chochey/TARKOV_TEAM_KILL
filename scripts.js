@@ -48,3 +48,16 @@ document.getElementById("closeModalBtn").addEventListener("click", function () {
 document.getElementById("openModalBtn").addEventListener("click", function () {
   document.getElementById("teamKillModal").style.display = "block";
 });
+
+const inputFields = document.querySelectorAll("#name, #killer, #cause");
+
+inputFields.forEach((inputField) => {
+  inputField.value = "";
+});
+
+const form = document.getElementById("teamKillForm");
+
+form.addEventListener("submit", function handleSubmit(event) {
+  event.preventDefault();
+  form.reset();
+});
