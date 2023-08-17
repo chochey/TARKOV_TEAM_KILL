@@ -8,7 +8,7 @@ const auth = new google.auth.JWT(
   credentials.client_email,
   null,
   credentials.private_key,
-  ["https://www.googleapis.com/auth/spreadsheets"]
+  ["https://www.googleapis.com/auth/spreadsheets.readonly"]
 );
 
 const sheets = google.sheets({ version: "v4", auth });
@@ -16,20 +16,14 @@ const sheets = google.sheets({ version: "v4", auth });
 module.exports = async (req, res) => {
   try {
     await auth.authorize();
-    const { name, killer, cause_of_death, map_name, death_location } = req.body;
-
-    await sheets.spreadsheets.values.append({
+    const response = await sheets.spreadsheets.values.get({
       spreadsheetId,
       range,
-      valueInputOption: "RAW",
-      resource: {
-        values: [[name, killer, cause_of_death, map_name, death_location]],
-      },
     });
 
-    res.status(200).send("Data added successfully");
+    res.json(response.data.values || []);
   } catch (error) {
-    console.error("Error writing to Google Sheets:", error);
+    console.error("Error reading from Google Sheets:", error);
     res.status(500).send("Internal Server Error");
   }
 };

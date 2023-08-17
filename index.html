@@ -15,24 +15,20 @@
         <form id="teamKillForm">
           <label for="name">Name:</label>
           <select id="name" name="name" required>
-            <!-- Replace with the desired names -->
-            <option value="Map1"></option>
+            <option value="" selected disabled>Select...</option>
             <option value="Nick">Nick</option>
             <option value="Kyle">Kyle</option>
             <option value="Dan">Dan</option>
             <option value="Greg">Greg</option>
-            <!-- ... add more options as required ... -->
           </select>
 
           <label for="killer">Killed By:</label>
           <select id="killer" name="killer" required>
-            <!-- Replace with the desired killers -->
-            <option value="Map1"></option>
+            <option value="" selected disabled>Select...</option>
             <option value="Nick">Nick</option>
             <option value="Kyle">Kyle</option>
             <option value="Dan">Dan</option>
-            <option value="PlaGregyer2">Greg</option>
-            <!-- ... add more options as required ... -->
+            <option value="Greg">Greg</option>
           </select>
 
           <label for="cause">Cause of Death:</label>
@@ -40,8 +36,7 @@
 
           <label for="map">Map:</label>
           <select id="map" name="map_name" required>
-            <!-- Replace with the desired maps -->
-            <option value="Map1"></option>
+            <option value="" selected disabled>Select...</option>
             <option value="Customs">Customs</option>
             <option value="Reserve">Reserve</option>
             <option value="Interchange">Interchange</option>
@@ -50,20 +45,16 @@
             <option value="Woods">Woods</option>
             <option value="Streets of Tarkov">Streets of Tarkov</option>
             <option value="Labs">Labs</option>
-            <!-- ... add more options as required ... -->
           </select>
 
           <label for="location">Location of Death:</label>
           <select id="location" name="death_location" required>
-            <!-- Replace with the desired locations -->
-            <option value="Map1"></option>
+            <option value="" selected disabled>Select...</option>
             <option value="Head">Head</option>
             <option value="Thorax">Thorax</option>
             <option value="Arm">Arm</option>
             <option value="Leg">Leg</option>
             <option value="Stomach">Stomach</option>
-
-            <!-- ... add more options as required ... -->
           </select>
 
           <button id="submitButton" type="submit">Submit</button>
@@ -73,25 +64,6 @@
     </div>
     <script src="scripts.js"></script>
 
-    <div id="dataContainer">
-      <div id="Player1" class="player-section">
-        <h3>Nick</h3>
-      </div>
-      <div id="Player2" class="player-section">
-        <h3>Kyle</h3>
-      </div>
-      <div id="Player3" class="player-section">
-        <h3>Dan</h3>
-      </div>
-      <div id="Player4" class="player-section">
-        <h3>Greg</h3>
-      </div>
-    </div>
-
-    <!-- ... Your existing code ... -->
-
     <div id="dataContainer"></div>
-
-    <!-- ... Your existing code ... -->
   </body>
 </html>
