@@ -105,7 +105,7 @@ function displayData(groupedData) {
     playerSection.classList.add("player-section");
 
     const playerName = document.createElement("h2");
-    playerName.innerText = player + " Deaths";
+    playerName.innerText = player + "s" + " Deaths";
     playerSection.appendChild(playerName);
 
     // Reverse the order of the data for the player
