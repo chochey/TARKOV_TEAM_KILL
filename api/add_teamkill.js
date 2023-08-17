@@ -1,7 +1,7 @@
 const { google } = require("googleapis");
 
 // Use environment variables for your credentials
-const credentials = require("./tarkov-team-kill-a40d2a22f344.json");
+const credentials = require("../tarkov-team-kill-a40d2a22f344.json");
 
 const spreadsheetId = "1sopwJ3wOKFPJfHBh3L0jTYRrhkE4V6nrWvEIdB2Dma4"; // Replace with your Google Sheet's ID
 const range = "Sheet1"; // Adjust if you're using a different sheet name
