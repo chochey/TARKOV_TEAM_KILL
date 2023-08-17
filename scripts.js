@@ -68,6 +68,7 @@ async function fetchDataAndDisplay() {
   try {
     const response = await fetch("/api/get_teamkills?" + new Date().getTime());
     const data = await response.json();
+    console.log("Received data:", data);
     console.log("Data fetched:", data);
     const groupedByPlayer = groupByPlayer(data);
     displayData(groupedByPlayer);
