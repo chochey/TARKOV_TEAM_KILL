@@ -115,7 +115,7 @@ function displayData(groupedData) {
 
     reversedData.forEach((detail) => {
       const detailElement = document.createElement("p");
-      detailElement.innerText = `${entryNumber}: Killed by ${detail.killedBy} in ${detail.map} to the ${detail.location} by ${detail.cause} on ${detail.date}`;
+      detailElement.innerText = `${entryNumber}: ${detail.killedBy} - ${detail.map} - ${detail.location} - ${detail.cause} -${detail.date}`;
       playerSection.appendChild(detailElement);
       entryNumber--; // Decrement the entry number for the next iteration
     });
