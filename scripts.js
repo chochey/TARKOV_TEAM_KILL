@@ -28,7 +28,7 @@ document
       e.target.reset();
 
       // Close the form modal
-      document.getElementById("modal-content").style.display = "none";
+      document.getElementById("teamKillModal").style.display = "none";
 
       // Fetch and display the updated data
       fetchDataAndDisplay();
@@ -74,9 +74,9 @@ document
 // Function to fetch the data
 async function fetchDataAndDisplay() {
   try {
-    const response = await fetch("/api/get_teamkills");
+    const response = await fetch("/api/get_teamkills?" + new Date().getTime());
     const data = await response.json();
-
+    console.log("Data fetched:", data);
     const groupedByPlayer = groupByPlayer(data);
     displayData(groupedByPlayer);
   } catch (error) {
