@@ -19,6 +19,8 @@ module.exports = async (req, res) => {
     const currentDate = new Date().toISOString().split("T")[0]; // This will format the date as "YYYY-MM-DD"
     const { name, killer, cause_of_death, map_name, death_location } = req.body;
 
+    console.log("Received data:", data);
+
     await sheets.spreadsheets.values.append({
       spreadsheetId,
       range,
