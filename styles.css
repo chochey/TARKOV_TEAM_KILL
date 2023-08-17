@@ -119,8 +119,9 @@ h1 {
 }
 
 .player-section h2 {
-  color: #000000; /* Dark color for the name, adjust as needed */
-  text-align: center; /* Center the name horizontally */
+  color: #91857e;
+  text-align: center;
+  text-decoration: underline;
 }
 
 #linksContainer {
