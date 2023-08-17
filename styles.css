@@ -28,6 +28,14 @@ select {
   border-radius: 5px;
 }
 
+#openModalBtn {
+  margin-top: 20px;
+  width: 45%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 button {
   display: block;
   width: 95%;
@@ -75,7 +83,7 @@ h1 {
   padding: 20px;
   border: 1px solid #444;
   width: 80%; /* This will take 80% of its parent's width */
-  margin: 0 auto; /* This will center the modal content horizontally */
+  margin: 20 auto; /* This will center the modal content horizontally */
 }
 .close {
   color: #aaa;
@@ -91,9 +99,9 @@ h1 {
   max-height: 800px;
   position: relative;
   margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* styles.css */
@@ -122,9 +130,5 @@ h1 {
   overflow: auto; /* This will add scrollbars if the content overflows the maximum height */
   position: relative;
   margin-bottom: 20px;
-  margin-top: 20px;
-}
-
-#openModalBtn {
   margin-top: 20px;
 }
