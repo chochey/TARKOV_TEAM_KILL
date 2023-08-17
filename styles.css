@@ -154,7 +154,7 @@ h2 {
   border-right: 1px solid #dfcdc3; /* Added border-right */
 }
 
-#linksContainera: (last-child) {
+#linksContainer a:last-child {
   border-right: none;
 }
 
