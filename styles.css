@@ -121,6 +121,8 @@ h1 {
   border-radius: 4px;
   overflow: auto; /* This will add scrollbars if the content overflows the maximum height */
   position: relative;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 #openModalBtn {
