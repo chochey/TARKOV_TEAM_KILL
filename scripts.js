@@ -5,6 +5,9 @@ document
 
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData.entries());
+
+    const causeOfDeath = document.querySelector("[name='causeOfDeath']").value;
+    data.cause_of_death = causeOfDeath;
     const submitButton = document.getElementById("submitButton");
     submitButton.disabled = true;
 
