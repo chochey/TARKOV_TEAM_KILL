@@ -21,7 +21,7 @@ module.exports = async (req, res) => {
       range,
     });
 
-    res.status(200).json(data); // Assuming 'data' contains the data you fetched from Google Sheets.
+    res.status(200).json(response.data.values);
   } catch (error) {
     console.error("Error fetching data:", error);
     res.status(500).json({ message: "Failed to fetch data." });
