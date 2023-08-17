@@ -25,7 +25,7 @@ module.exports = async (req, res) => {
       valueInputOption: "RAW",
       resource: {
         values: [
-          [name, killer, cause_of_death, map_name, death_location, currentDate],
+          [name, killer, causeOfDeath, map_name, death_location, currentDate],
         ],
       },
     });
