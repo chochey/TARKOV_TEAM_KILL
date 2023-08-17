@@ -46,7 +46,7 @@ h1 {
   text-align: center;
 }
 
-.modal {
+#teamKillModal.modal {
   display: none;
   /* ... other styles ... */
 }
