@@ -95,7 +95,6 @@ function displayData(groupedData) {
 
   // Clear out old data
   container.innerHTML = "";
-  let entryNumber = 1;
 
   for (const player in groupedData) {
     const playerSection = document.createElement("div");
@@ -104,6 +103,8 @@ function displayData(groupedData) {
     const playerName = document.createElement("h2");
     playerName.innerText = player;
     playerSection.appendChild(playerName);
+
+    let entryNumber = 1;
 
     groupedData[player].forEach((detail) => {
       const detailElement = document.createElement("p");
