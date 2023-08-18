@@ -1,5 +1,5 @@
 const { google } = require("googleapis");
-const credentials = require("../googleConfig.js");
+const credentials = require("./googleConfig.js");
 
 const spreadsheetId = "1sopwJ3wOKFPJfHBh3L0jTYRrhkE4V6nrWvEIdB2Dma4";
 const range = "Sheet1";
