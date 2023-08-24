@@ -27,13 +27,13 @@ module.exports = async (req, res) => {
       resource: {
         values: [
           [
-            uniqueID,
             name,
             killer,
             cause_of_death,
             map_name,
             death_location,
             currentDate,
+            uniqueID,
           ],
         ],
       },
