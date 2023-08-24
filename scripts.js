@@ -81,6 +81,7 @@ async function fetchDataAndDisplay() {
   }
 }
 
+// Function to group data by player names
 function groupByPlayer(data) {
   return data.reduce((acc, curr) => {
     const [id, name, killedBy, cause, map, location, date] = curr;
@@ -93,6 +94,7 @@ function groupByPlayer(data) {
   }, {});
 }
 
+// Function to display the grouped data
 function displayData(groupedData) {
   const container = document.getElementById("dataContainer");
   container.innerHTML = "";
@@ -120,7 +122,7 @@ function displayData(groupedData) {
       deleteButton.classList.add("delete-button");
       playerSection.appendChild(deleteButton);
 
-      const uniqueID = detail.id; // Retrieve the unique ID
+      const uniqueID = detail.id;
 
       deleteButton.addEventListener("click", async function () {
         try {
