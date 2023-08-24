@@ -120,6 +120,7 @@ function displayData(groupedData) {
       const uniqueID = detail.uniqueID;
 
       deleteButton.addEventListener("click", async function () {
+        console.log("Delete button clicked for ID:", uniqueID); // Debugging line
         try {
           const response = await fetch("/api/delete_teamkill", {
             method: "POST",
@@ -128,9 +129,8 @@ function displayData(groupedData) {
             },
             body: JSON.stringify({ id: uniqueID }),
           });
-
           const result = await response.json();
-
+          console.log("Server response:", result); // Debugging line
           if (response.ok) {
             playerSection.remove();
           } else {
