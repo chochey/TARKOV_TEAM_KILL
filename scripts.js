@@ -124,7 +124,7 @@ function displayData(groupedData) {
 
       deleteButton.addEventListener("click", async function () {
         try {
-          const response = await fetch("./api/delete_teamkill", {
+          const response = await fetch("/api/delete_teamkill", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
