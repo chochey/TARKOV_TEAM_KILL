@@ -16,8 +16,9 @@ const sheets = google.sheets({ version: "v4", auth });
 module.exports = async (req, res) => {
   try {
     await auth.authorize();
-    const currentDate = new Date().toISOString().split("T")[0]; // This will format the date as "YYYY-MM-DD"
+    const currentDate = new Date().toISOString().split("T")[0]; // Format date as "YYYY-MM-DD"
     const { name, killer, cause_of_death, map_name, death_location } = req.body;
+    const uniqueID = new Date().getTime().toString(); // Unique timestamp ID
 
     await sheets.spreadsheets.values.append({
       spreadsheetId,
@@ -25,7 +26,15 @@ module.exports = async (req, res) => {
       valueInputOption: "RAW",
       resource: {
         values: [
-          [name, killer, cause_of_death, map_name, death_location, currentDate],
+          [
+            uniqueID,
+            name,
+            killer,
+            cause_of_death,
+            map_name,
+            death_location,
+            currentDate,
+          ],
         ],
       },
     });

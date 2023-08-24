@@ -40,7 +40,6 @@ document
       }, 3000);
     }
   });
-// ----------------------------------------------------------------------------------------------------------------
 
 document.getElementById("openModalBtn").addEventListener("click", function () {
   document.getElementById("teamKillModal").style.display = "block";
@@ -66,13 +65,10 @@ document
     document.getElementById("teamKillModal").style.display = "block";
   });
 
-// Function to fetch the data
 async function fetchDataAndDisplay() {
   try {
     const response = await fetch("/api/get_teamkills?" + new Date().getTime());
     const data = await response.json();
-    console.log("Received data:", data);
-    console.log("Data fetched:", data);
     const groupedByPlayer = groupByPlayer(data);
     displayData(groupedByPlayer);
   } catch (error) {
@@ -80,7 +76,6 @@ async function fetchDataAndDisplay() {
   }
 }
 
-// Function to group data by player names
 function groupByPlayer(data) {
   return data.reduce((acc, curr) => {
     const [name, killedBy, cause, map, location, date] = curr;
@@ -93,46 +88,60 @@ function groupByPlayer(data) {
   }, {});
 }
 
-// Function to display the grouped data
 function displayData(groupedData) {
   const container = document.getElementById("dataContainer");
-
-  // Clear out old data
   container.innerHTML = "";
 
   for (const player in groupedData) {
     const playerSection = document.createElement("div");
     playerSection.classList.add("player-section");
-
     const playerName = document.createElement("h3");
-    playerName.innerText = player + "'s" + " Deaths";
+    playerName.innerText = player + "'s Deaths";
     playerSection.appendChild(playerName);
-
-    const playerData = groupedData[player]; // Get the player's data
-
-    // Sort the player's data by date (newest first)
+    const playerData = groupedData[player];
     playerData.sort((a, b) => new Date(b.date) - new Date(a.date));
 
     for (let i = 0; i < playerData.length; i++) {
       const detail = playerData[i];
       const detailElement = document.createElement("p");
-
-      // Number from highest to lowest
       const number = playerData.length - i;
       detailElement.innerText = `${number}: ${detail.killedBy}  |  ${detail.map}  |  ${detail.location}  |  ${detail.cause}  |  ${detail.date}`;
       playerSection.appendChild(detailElement);
-    }
 
+      const deleteButton = document.createElement("button");
+      deleteButton.innerText = "Delete";
+      deleteButton.classList.add("delete-button");
+      playerSection.appendChild(deleteButton);
+      const uniqueID = detail.uniqueID;
+
+      deleteButton.addEventListener("click", async function () {
+        try {
+          const response = await fetch("/api/delete_teamkill", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ id: uniqueID }),
+          });
+
+          const result = await response.json();
+
+          if (response.ok) {
+            playerSection.remove();
+          } else {
+            throw new Error(result.message);
+          }
+        } catch (error) {
+          console.error("Error deleting entry:", error);
+        }
+      });
+    }
     container.appendChild(playerSection);
   }
 }
 
-// Call the function to fetch and display data on page load
-
 document.addEventListener("DOMContentLoaded", function () {
   fetchDataAndDisplay();
-
-  // Replace "Cause of Death" input with the ammo dropdown
   const causeInput = document.getElementById("cause");
   const ammoDropdown = createAmmoDropdown();
   causeInput.replaceWith(ammoDropdown);
