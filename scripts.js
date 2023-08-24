@@ -108,17 +108,16 @@ function displayData(groupedData) {
     playerName.innerText = player + "'s" + " Deaths";
     playerSection.appendChild(playerName);
 
-    // Reverse the order of the data for the player
-    const reversedData = [...groupedData[player]].reverse();
+    const playerData = groupedData[player]; // Get the player's data
 
-    let entryNumber = reversedData.length; // Start numbering from the length of the array
-
-    reversedData.forEach((detail) => {
+    for (let i = playerData.length - 1; i >= 0; i--) {
+      const detail = playerData[i];
       const detailElement = document.createElement("p");
-      detailElement.innerText = `${entryNumber}: ${detail.killedBy}  |  ${detail.map}  |  ${detail.location}  |  ${detail.cause}  |  ${detail.date}`;
+      detailElement.innerText = `${i + 1}: ${detail.killedBy}  |  ${
+        detail.map
+      }  |  ${detail.location}  |  ${detail.cause}  |  ${detail.date}`;
       playerSection.appendChild(detailElement);
-      entryNumber--; // Decrement the entry number for the next iteration
-    });
+    }
 
     container.appendChild(playerSection);
   }
