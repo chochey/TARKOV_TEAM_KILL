@@ -93,6 +93,7 @@ function groupByPlayer(data) {
   }, {});
 }
 
+// Function to display the grouped data
 function displayData(groupedData) {
   const container = document.getElementById("dataContainer");
 
@@ -124,3 +125,14 @@ function displayData(groupedData) {
     container.appendChild(playerSection);
   }
 }
+
+// Call the function to fetch and display data on page load
+
+document.addEventListener("DOMContentLoaded", function () {
+  fetchDataAndDisplay();
+
+  // Replace "Cause of Death" input with the ammo dropdown
+  const causeInput = document.getElementById("cause");
+  const ammoDropdown = createAmmoDropdown();
+  causeInput.replaceWith(ammoDropdown);
+});
