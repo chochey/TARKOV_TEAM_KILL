@@ -8,6 +8,11 @@ document
 
     const causeOfDeath = document.querySelector("[name='causeOfDeath']").value;
     data.cause_of_death = causeOfDeath;
+
+    // Add the current client-side date to the data
+    const currentDate = new Date();
+    data.date = currentDate.toISOString(); // Convert to ISO string format
+
     const submitButton = document.getElementById("submitButton");
     submitButton.disabled = true;
 
