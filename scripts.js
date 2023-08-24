@@ -84,11 +84,11 @@ async function fetchDataAndDisplay() {
 // Function to group data by player names
 function groupByPlayer(data) {
   return data.reduce((acc, curr) => {
-    const [id, name, killedBy, cause, map, location, date] = curr;
+    const [name, killedBy, cause, map, location, date, id] = curr;
     if (!acc[name]) {
       acc[name] = [];
     }
-    acc[name].push({ id, killedBy, cause, map, location, date });
+    acc[name].push({ killedBy, cause, map, location, date, id });
     acc[name].sort((a, b) => new Date(b.date) - new Date(a.date));
     return acc;
   }, {});
@@ -115,7 +115,7 @@ function displayData(groupedData) {
       const detailElement = document.createElement("p");
 
       const number = playerData.length - i;
-      detailElement.innerText = `${number}: ${detail.killedBy} (Killed by)  |  ${detail.map}  |  ${detail.location}  |  ${detail.cause}  |  ${detail.date}`;
+      detailElement.innerText = `${number}: ${detail.killedBy}  |  ${detail.map}  |  ${detail.location}  |  ${detail.cause}  |  ${detail.date}`;
       playerSection.appendChild(detailElement);
 
       const deleteButton = document.createElement("button");
