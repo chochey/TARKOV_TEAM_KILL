@@ -95,6 +95,7 @@ function groupByPlayer(data) {
 }
 
 // Function to display the grouped data
+// Function to display the grouped data
 function displayData(groupedData) {
   const container = document.getElementById("dataContainer");
   container.innerHTML = "";
@@ -114,7 +115,7 @@ function displayData(groupedData) {
       const detailElement = document.createElement("p");
 
       const number = playerData.length - i;
-      detailElement.innerText = `${number}: ${detail.killedBy}  |  ${detail.map}  |  ${detail.location}  |  ${detail.cause}  |  ${detail.date}`;
+      detailElement.innerText = `${number}: ${detail.killedBy} (Killed by)  |  ${detail.map}  |  ${detail.location}  |  ${detail.cause}  |  ${detail.date}`;
       playerSection.appendChild(detailElement);
 
       const deleteButton = document.createElement("button");
