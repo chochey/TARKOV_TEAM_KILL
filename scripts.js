@@ -9,9 +9,8 @@ document
     const causeOfDeath = document.querySelector("[name='causeOfDeath']").value;
     data.cause_of_death = causeOfDeath;
 
-    // Add the current client-side date to the data
     const currentDate = new Date();
-    data.date = currentDate.toISOString(); // Convert to ISO string format
+    data.date = currentDate.toISOString();
 
     const submitButton = document.getElementById("submitButton");
     submitButton.disabled = true;
@@ -30,8 +29,8 @@ document
       if (response.ok) {
         document.getElementById("message").innerText = result.message;
         e.target.reset();
-        document.getElementById("teamKillModal").style.display = "none"; // Close the modal
-        await fetchDataAndDisplay(); // Refresh displayed data
+        document.getElementById("teamKillModal").style.display = "none";
+        await fetchDataAndDisplay();
       } else {
         throw new Error(result.message);
       }
@@ -81,7 +80,6 @@ async function fetchDataAndDisplay() {
   }
 }
 
-// Function to group data by player names
 function groupByPlayer(data) {
   return data.reduce((acc, curr) => {
     const [name, killedBy, cause, map, location, date, id] = curr;
@@ -94,8 +92,6 @@ function groupByPlayer(data) {
   }, {});
 }
 
-// Function to display the grouped data
-// Function to display the grouped data
 function displayData(groupedData) {
   const container = document.getElementById("dataContainer");
   container.innerHTML = "";
@@ -105,29 +101,30 @@ function displayData(groupedData) {
     playerSection.classList.add("player-section");
 
     const playerName = document.createElement("h3");
-    playerName.innerText = player + "'s" + " Deaths";
+    playerName.innerText = player + "'s Deaths";
     playerSection.appendChild(playerName);
 
     const playerData = groupedData[player];
 
     for (let i = 0; i < playerData.length; i++) {
       const detail = playerData[i];
+      const entryContainer = document.createElement("div");
       const detailElement = document.createElement("p");
 
       const number = playerData.length - i;
       detailElement.innerText = `${number}: ${detail.killedBy}  |  ${detail.map}  |  ${detail.location}  |  ${detail.cause}  |  ${detail.date}`;
-      playerSection.appendChild(detailElement);
+      entryContainer.appendChild(detailElement);
 
       const deleteButton = document.createElement("button");
       deleteButton.innerText = "Delete";
       deleteButton.classList.add("delete-button");
-      playerSection.appendChild(deleteButton);
+      entryContainer.appendChild(deleteButton);
 
       const uniqueID = detail.id;
 
       deleteButton.addEventListener("click", async function () {
         try {
-          const response = await fetch("/api/delete_teamkill", {
+          const response = await fetch("./api/delete_teamkill", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -137,7 +134,7 @@ function displayData(groupedData) {
 
           const result = await response.json();
           if (response.ok) {
-            playerSection.remove();
+            entryContainer.remove();
           } else {
             throw new Error(result.message);
           }
@@ -145,6 +142,8 @@ function displayData(groupedData) {
           console.error("Error deleting entry:", error);
         }
       });
+
+      playerSection.appendChild(entryContainer);
     }
 
     container.appendChild(playerSection);
