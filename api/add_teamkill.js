@@ -2,7 +2,7 @@ const { google } = require("googleapis");
 const credentials = require("../tarkov-team-kill-a40d2a22f344.json");
 
 const spreadsheetId = "1sopwJ3wOKFPJfHBh3L0jTYRrhkE4V6nrWvEIdB2Dma4";
-const range = "Sheet1!A:A";
+const range = "Sheet1";
 
 const auth = new google.auth.JWT(
   credentials.client_email,
