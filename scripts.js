@@ -93,7 +93,6 @@ function groupByPlayer(data) {
   }, {});
 }
 
-// Function to display the grouped data
 function displayData(groupedData) {
   const container = document.getElementById("dataContainer");
 
@@ -110,7 +109,10 @@ function displayData(groupedData) {
 
     const playerData = groupedData[player]; // Get the player's data
 
-    for (let i = playerData.length - 1; i >= 0; i--) {
+    // Sort the player's data by date (newest first)
+    playerData.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+    for (let i = 0; i < playerData.length; i++) {
       const detail = playerData[i];
       const detailElement = document.createElement("p");
       detailElement.innerText = `${i + 1}: ${detail.killedBy}  |  ${
@@ -122,14 +124,3 @@ function displayData(groupedData) {
     container.appendChild(playerSection);
   }
 }
-
-// Call the function to fetch and display data on page load
-
-document.addEventListener("DOMContentLoaded", function () {
-  fetchDataAndDisplay();
-
-  // Replace "Cause of Death" input with the ammo dropdown
-  const causeInput = document.getElementById("cause");
-  const ammoDropdown = createAmmoDropdown();
-  causeInput.replaceWith(ammoDropdown);
-});
