@@ -116,9 +116,10 @@ function displayData(groupedData) {
     for (let i = 0; i < playerData.length; i++) {
       const detail = playerData[i];
       const detailElement = document.createElement("p");
-      detailElement.innerText = `${i + 1}: ${detail.killedBy}  |  ${
-        detail.map
-      }  |  ${detail.location}  |  ${detail.cause}  |  ${detail.date}`;
+
+      // Number from highest to lowest
+      const number = playerData.length - i;
+      detailElement.innerText = `${number}: ${detail.killedBy}  |  ${detail.map}  |  ${detail.location}  |  ${detail.cause}  |  ${detail.date}`;
       playerSection.appendChild(detailElement);
     }
 
