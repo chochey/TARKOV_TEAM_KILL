@@ -83,11 +83,11 @@ async function fetchDataAndDisplay() {
 
 function groupByPlayer(data) {
   return data.reduce((acc, curr) => {
-    const [name, killedBy, cause, map, location, date] = curr;
+    const [id, name, killedBy, cause, map, location, date] = curr;
     if (!acc[name]) {
       acc[name] = [];
     }
-    acc[name].push({ killedBy, cause, map, location, date });
+    acc[name].push({ id, killedBy, cause, map, location, date });
     acc[name].sort((a, b) => new Date(b.date) - new Date(a.date));
     return acc;
   }, {});
@@ -100,15 +100,17 @@ function displayData(groupedData) {
   for (const player in groupedData) {
     const playerSection = document.createElement("div");
     playerSection.classList.add("player-section");
+
     const playerName = document.createElement("h3");
-    playerName.innerText = player + "'s Deaths";
+    playerName.innerText = player + "'s" + " Deaths";
     playerSection.appendChild(playerName);
+
     const playerData = groupedData[player];
-    playerData.sort((a, b) => new Date(b.date) - new Date(a.date));
 
     for (let i = 0; i < playerData.length; i++) {
       const detail = playerData[i];
       const detailElement = document.createElement("p");
+
       const number = playerData.length - i;
       detailElement.innerText = `${number}: ${detail.killedBy}  |  ${detail.map}  |  ${detail.location}  |  ${detail.cause}  |  ${detail.date}`;
       playerSection.appendChild(detailElement);
@@ -117,10 +119,10 @@ function displayData(groupedData) {
       deleteButton.innerText = "Delete";
       deleteButton.classList.add("delete-button");
       playerSection.appendChild(deleteButton);
-      const uniqueID = detail.uniqueID;
+
+      const uniqueID = detail.id; // Retrieve the unique ID
 
       deleteButton.addEventListener("click", async function () {
-        console.log("Delete button clicked for ID:", uniqueID); // Debugging line
         try {
           const response = await fetch("/api/delete_teamkill", {
             method: "POST",
@@ -129,8 +131,8 @@ function displayData(groupedData) {
             },
             body: JSON.stringify({ id: uniqueID }),
           });
+
           const result = await response.json();
-          console.log("Server response:", result); // Debugging line
           if (response.ok) {
             playerSection.remove();
           } else {
@@ -141,6 +143,7 @@ function displayData(groupedData) {
         }
       });
     }
+
     container.appendChild(playerSection);
   }
 }

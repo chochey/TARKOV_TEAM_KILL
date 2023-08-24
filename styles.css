@@ -175,3 +175,8 @@ h2 {
   padding: 5px;
   border-radius: 4px;
 }
+
+.delete-button:active {
+  transform: scale(0.95); /* slightly reduce the size when pressed */
+  background-color: #d9534f; /* change to a darker red when pressed */
+}
