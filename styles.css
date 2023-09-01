@@ -205,13 +205,25 @@ h2 {
 #dataContainer .player-section {
   background-size: cover;
   background-position: center;
-  color: white; /* Assuming white text */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional: Adds a shadow to make text more readable */
+  color: white; /* White text */
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); /* Increased text shadow for better readability */
+}
+
+#dataContainer .player-section p,
+#dataContainer .player-section h3 {
+  /* Assuming the text is in <p> and <h3> tags */
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.6
+  ); /* Semi-transparent black background for the text */
+  padding: 5px; /* Padding around the text */
+  border-radius: 5px; /* Optional: Rounded corners for the text container */
 }
 
 #dataContainer .player-section:nth-child(1) {
   background-image: url("./img/nickimage.jpg");
-  background-color: rgba(0, 0, 0, 0.5);
 }
 
 #dataContainer .player-section:nth-child(2) {
