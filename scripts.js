@@ -115,34 +115,6 @@ function displayData(groupedData) {
       detailElement.innerText = `${number}: ${detail.killedBy}  |  ${detail.map}  |  ${detail.location}  |  ${detail.cause}  |  ${detail.date}`;
       entryContainer.appendChild(detailElement);
 
-      // const deleteButton = document.createElement("button");
-      // deleteButton.innerText = "Delete";
-      // deleteButton.classList.add("delete-button");
-      // entryContainer.appendChild(deleteButton);
-
-      const uniqueID = detail.id;
-
-      deleteButton.addEventListener("click", async function () {
-        try {
-          const response = await fetch("/api/delete_teamkill", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ id: uniqueID }),
-          });
-
-          const result = await response.json();
-          if (response.ok) {
-            entryContainer.remove();
-          } else {
-            throw new Error(result.message);
-          }
-        } catch (error) {
-          console.error("Error deleting entry:", error);
-        }
-      });
-
       playerSection.appendChild(entryContainer);
     }
 
