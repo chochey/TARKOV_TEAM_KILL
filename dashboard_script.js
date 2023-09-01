@@ -209,7 +209,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       },
     });
 
-    // Render bar Chart for TEAM KILLS BY KILLER
+    // Render bar Chart for TEAM KILLS BY KILLERr
     const ctx5 = document
       .getElementById("teamKillsByKillerChart")
       .getContext("2d");
