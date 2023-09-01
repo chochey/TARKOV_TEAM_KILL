@@ -207,6 +207,7 @@ h2 {
   background-position: center;
   color: white; /* White text */
   text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); /* Increased text shadow for better readability */
+  height: 800px;
 }
 
 #dataContainer .player-section p,
@@ -238,7 +239,7 @@ h2 {
   background-repeat: no-repeat;
 }
 
-#dataContainer .player-section:nth-child(3) {
+#dataContainer .player-section:nth-child(4) {
   background-image: url("./img/gregimg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
