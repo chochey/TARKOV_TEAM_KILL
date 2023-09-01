@@ -202,14 +202,20 @@ h2 {
   clear: left;
 }
 
+#dataContainer .player-section {
+  background-size: cover;
+  background-position: center;
+  color: white; /* Assuming white text */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional: Adds a shadow to make text more readable */
+}
+
 #dataContainer .player-section:nth-child(1) {
   background-image: url("./img/nickimage.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 #dataContainer .player-section:nth-child(2) {
-  background-image: url("./img/nickimage.jpg");
+  background-image: url("");
   background-size: cover;
   background-repeat: no-repeat;
 }
