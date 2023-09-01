@@ -30,12 +30,22 @@ select {
 
 #openModalBtn {
   display: block;
-  width: 30%;
+  width: 15%;
   background-color: #a5968d;
   color: #000000;
   border: none;
   border-radius: 5px;
   margin-left: auto;
+}
+
+#viewDashboardBtn {
+  width: 15%;
+  margin-left: 5px;
+}
+
+#viewDashboardBtn:hover {
+  color: #dfcdc3;
+  background-color: #5f6769;
 }
 
 #openModalBtn:hover {
@@ -179,4 +189,9 @@ h2 {
 .delete-button:active {
   transform: scale(0.95); /* slightly reduce the size when pressed */
   background-color: #d9534f; /* change to a darker red when pressed */
+}
+
+.chart-container {
+  max-width: 400px;
+  margin: 0 auto; /* Centers the chart container */
 }
