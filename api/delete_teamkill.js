@@ -44,3 +44,43 @@ module.exports = async (req, res) => {
     res.status(500).json({ message: "Failed to delete entry." });
   }
 };
+
+// ---------------------------
+
+const { GoogleSpreadsheet } = require("google-spreadsheet");
+
+export default async (req, res) => {
+  if (req.method !== "POST") {
+    return res.status(405);
+  }
+
+  const doc = new GoogleSpreadsheet(process.env.SHEET_ID);
+  await doc.useServiceAccountAuth({
+    client_email: process.env.SHEET_CLIENT_EMAIL,
+    private_key: process.env.SHEET_PRIVATE_KEY,
+  });
+
+  await doc.loadInfo();
+  const sheet = doc.sheetsByIndex[0]; // Assuming data is on the first sheet
+
+  const rows = await sheet.getRows();
+  const id = req.body.id;
+
+  for (let index = 0; index < rows.length; index++) {
+    const row = sheet.getRange("G" + (index + 1));
+    console.log(`Checking row ${index + 1} with ID: ${row.getValues()[0][0]}`);
+    if (row.getValues()[0][0] === id) {
+      sheet.deleteRow(index + 1);
+      console.log(`Deleted row ${index + 1}`);
+      return res.status(200).json({
+        status: "success",
+        message: "Entry deleted successfully.",
+      });
+    }
+  }
+
+  return res.status(404).json({
+    status: "error",
+    message: "Entry not found.",
+  });
+};
