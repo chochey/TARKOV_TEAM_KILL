@@ -13,12 +13,6 @@
   <body>
     <h1>Tarkov Team Kills - Dashboard</h1>
 
-    <!-- Bar Chart for Total Team Kills Over Time -->
-    <div class="chart-container">
-      <h2>Total Team Kills Over Time</h2>
-      <canvas id="teamKillsOverTimeChart" width="400" height="200"></canvas>
-    </div>
-
     <!-- Pie Chart for Team Kills by Player -->
     <div class="chart-container">
       <h2>Team Kills by Player</h2>
@@ -26,6 +20,23 @@
     </div>
 
     <!-- Pie Chart for Team Kills by Killer -->
+    <div class="chart-container">
+      <h2>What Killed You</h2>
+      <canvas id="causeOfDeathChart" width="400" height="200"></canvas>
+    </div>
+
+    <!-- Pie Chart for Map -->
+    <div class="chart-container">
+      <h2>Map</h2>
+      <canvas id="mapChart" width="400" height="200"></canvas>
+    </div>
+
+    <!-- Pie Chart for Location of Death -->
+    <div class="chart-container">
+      <h2>Location of Death</h2>
+      <canvas id="locationChart" width="400" height="200"></canvas>
+    </div>
+
     <div class="chart-container">
       <h2>Team Kills by Killer</h2>
       <canvas id="teamKillsByKillerChart" width="400" height="200"></canvas>
