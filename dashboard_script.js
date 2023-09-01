@@ -24,10 +24,10 @@ document.addEventListener("DOMContentLoaded", async () => {
       locationData[location] = (locationData[location] || 0) + 1;
     });
 
-    // Render Pie Chart for What Killed You
+    // Render bar Chart for What Killed You
     const ctx1 = document.getElementById("causeOfDeathChart").getContext("2d");
     new Chart(ctx1, {
-      type: "pie",
+      type: "bar",
       data: {
         labels: Object.keys(causeOfDeathData),
         datasets: [
@@ -51,10 +51,10 @@ document.addEventListener("DOMContentLoaded", async () => {
       },
     });
 
-    // Render Pie Chart for Map
+    // Render bar Chart for Map
     const ctx2 = document.getElementById("mapChart").getContext("2d");
     new Chart(ctx2, {
-      type: "pie",
+      type: "bar",
       data: {
         labels: Object.keys(mapData),
         datasets: [
@@ -78,10 +78,10 @@ document.addEventListener("DOMContentLoaded", async () => {
       },
     });
 
-    // Render Pie Chart for Location of Death
+    // Render bar Chart for Location of Death
     const ctx3 = document.getElementById("locationChart").getContext("2d");
     new Chart(ctx3, {
-      type: "pie",
+      type: "bar",
       data: {
         labels: Object.keys(locationData),
         datasets: [
