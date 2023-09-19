@@ -39,3 +39,5 @@ async function fetchData() {
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("searchBtn").addEventListener("click", performSearch);
 });
+
+document.getElementById("searchInput").addEventListener("input", performSearch);
