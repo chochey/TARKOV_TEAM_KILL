@@ -16,7 +16,11 @@ const sheets = google.sheets({ version: "v4", auth });
 module.exports = async (req, res) => {
   try {
     await auth.authorize();
-    const currentDate = new Date().toISOString().split("T")[0]; // Format date as "YYYY-MM-DD"
+    const currentDate = new Date()
+      .toISOString()
+      .replace("T", " ")
+      .split(".")[0];
+
     const { name, killer, cause_of_death, map_name, death_location } = req.body;
     const uniqueID = new Date().getTime().toString(); // Unique timestamp ID
 
