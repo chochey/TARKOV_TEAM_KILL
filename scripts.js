@@ -92,6 +92,12 @@ function groupByPlayer(data) {
   }, {});
 }
 
+for (let entry of groupedByPlayer) {
+  if (entry.datetime) {
+    entry.date = entry.datetime.split(" ")[0];
+  }
+}
+
 function displayData(groupedData) {
   const container = document.getElementById("dataContainer");
   container.innerHTML = "";
