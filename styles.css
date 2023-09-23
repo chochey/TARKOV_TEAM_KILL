@@ -210,17 +210,6 @@ h2 {
   height: 800px;
 }
 
-#dataContainer .player-section::before {
-  content: ""; /* Necessary for the pseudo-element to be generated */
-  position: absolute; /* Absolute position */
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0; /* Cover the entire player-section */
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
-  z-index: -1; /* Place the overlay behind the text/content */
-}
-
 #dataContainer .player-section p,
 #dataContainer .player-section h3 {
   /* Assuming the text is in <p> and <h3> tags */
