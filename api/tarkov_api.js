@@ -21,23 +21,26 @@ fetch("https://api.tarkov.dev/graphql", {
   }),
 })
   .then((r) => r.json())
-  .then((data) => {
-    populateTable(data);
-  });
+  .then((data) => console.log("data returned:", data));
 
-function populateTable(data) {
-  const tableBody = document.getElementById("ammoTable").querySelector("tbody");
+//   .then((r) => r.json())
+//   .then((data) => {
+//     populateTable(data);
+//   });
 
-  data.ammoType.forEach((ammo) => {
-    const row = tableBody.insertRow();
-    row.insertCell().textContent = ammo.caliber;
-    row.insertCell().textContent = ammo.tracerColor;
-    row.insertCell().textContent = ammo.projectileCount;
-    row.insertCell().textContent = ammo.accuracy;
-    row.insertCell().textContent = ammo.accuracyModifier;
-    row.insertCell().textContent = ammo.recoil;
-    row.insertCell().textContent = ammo.recoilModifier;
-    row.insertCell().textContent = ammo.initialSpeed;
-    row.insertCell().textContent = ammo.staminaBurnPerDamage;
-  });
-}
+// function populateTable(data) {
+//   const tableBody = document.getElementById("ammoTable").querySelector("tbody");
+
+//   data.ammoType.forEach((ammo) => {
+//     const row = tableBody.insertRow();
+//     row.insertCell().textContent = ammo.caliber;
+//     row.insertCell().textContent = ammo.tracerColor;
+//     row.insertCell().textContent = ammo.projectileCount;
+//     row.insertCell().textContent = ammo.accuracy;
+//     row.insertCell().textContent = ammo.accuracyModifier;
+//     row.insertCell().textContent = ammo.recoil;
+//     row.insertCell().textContent = ammo.recoilModifier;
+//     row.insertCell().textContent = ammo.initialSpeed;
+//     row.insertCell().textContent = ammo.staminaBurnPerDamage;
+//   });
+// }
