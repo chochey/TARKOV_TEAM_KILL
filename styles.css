@@ -260,5 +260,5 @@ h2 {
   bottom: 0;
   left: 0; /* Cover the entire player-section */
   background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
-  z-index: -1; /* Place the overlay behind the text/content */
+  z-index: -1;
 }
