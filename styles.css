@@ -205,25 +205,29 @@ h2 {
 #dataContainer .player-section {
   background-size: cover;
   background-position: center;
-  color: white; /* White text */
-  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); /* Increased text shadow for better readability */
+  color: white;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
   height: 800px;
 }
 
 #dataContainer .player-section::before {
-  content: ""; /* Necessary for the pseudo-element to be generated */
-  position: absolute; /* Absolute position */
+  content: "";
+  position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
-  left: 0; /* Cover the entire player-section */
-  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black overlay */
-  z-index: -1; /* Place the overlay behind the text/content */
+  left: 0;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.8
+  ); /* Increased opacity for a darker overlay */
+  z-index: -1;
 }
 
 #dataContainer .player-section p,
 #dataContainer .player-section h3 {
-  /* Assuming the text is in <p> and <h3> tags */
   background-color: rgba(0, 0, 0, 0.774);
   padding: 5px;
   border-radius: 5px;
@@ -231,23 +235,16 @@ h2 {
 
 #dataContainer .player-section:nth-child(1) {
   background-image: url("./img/nickimage.jpg");
-  background-color: rgba(0, 0, 0, 0.5);
 }
 
 #dataContainer .player-section:nth-child(2) {
   background-image: url("./img/kyleimg.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
 #dataContainer .player-section:nth-child(3) {
   background-image: url("./img/danimg.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
 #dataContainer .player-section:nth-child(4) {
   background-image: url("./img/gregimg.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
 }
