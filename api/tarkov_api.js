@@ -1,27 +1,39 @@
-fetch("https://api.tarkov.dev/graphql", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-    Accept: "application/json",
-  },
-  body: JSON.stringify({
-    query: `{
-    ammoType: ammo {
-        caliber
-        tracerColor
-        projectileCount
-        accuracy
-        accuracyModifier
-        recoil
-        recoilModifier
-        initialSpeed
-        staminaBurnPerDamage
-    }
-}`,
-  }),
-})
-  .then((r) => r.json())
-  .then((data) => console.log("data returned:", data));
+// Import the required 'fetch' function
+const fetch = require("node-fetch");
+
+// The default exported function for the serverless endpoint
+module.exports = async (req, res) => {
+  try {
+    const response = await fetch("https://api.tarkov.dev/graphql", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        query: `{
+          ammoType: ammo {
+            caliber
+            tracerColor
+            projectileCount
+            accuracy
+            accuracyModifier
+            recoil
+            recoilModifier
+            initialSpeed
+            staminaBurnPerDamage
+          }
+        }`,
+      }),
+    });
+
+    const data = await response.json();
+    res.status(200).json(data); // Send the fetched data as a response
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    res.status(500).json({ error: "Failed to fetch data from Tarkov API." });
+  }
+};
 
 //   .then((r) => r.json())
 //   .then((data) => {
